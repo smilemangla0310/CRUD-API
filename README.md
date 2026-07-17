@@ -1,127 +1,197 @@
-# 🚀 Todo API using FastAPI
+# 🚀 CRUD Todo API using FastAPI
 
-A simple CRUD REST API built using **FastAPI** as part of the **FlyRank Backend AI Engineering Internship**.
+A simple CRUD (Create, Read, Update, Delete) REST API built using **FastAPI** .
 
----
-
-## Features
-
-- Create Tasks
-- Read All Tasks
-- Read Task by ID
-- Update Tasks
-- Delete Tasks
-- Request Validation using Pydantic
-- Interactive Swagger Documentation
+This project demonstrates the fundamentals of backend API development, request validation using Pydantic, HTTP exception handling, and interactive API documentation with Swagger UI.
 
 ---
 
-## Tech Stack
+## 📌 Features
 
-- Python
+- ✅ Create a Task
+- ✅ Get All Tasks
+- ✅ Get Task by ID
+- ✅ Update an Existing Task
+- ✅ Delete a Task
+- ✅ Request Validation using Pydantic
+- ✅ Interactive Swagger UI Documentation
+- ✅ HTTP Status Codes & Error Handling
+
+---
+
+## 🛠 Tech Stack
+
+- Python 3
 - FastAPI
 - Pydantic
 - Uvicorn
+- Git & GitHub
 
 ---
 
-## Installation
+# 📂 Project Structure
 
-Clone the repository
+```
+CRUD-API/
+│
+├── images/
+│   └── swagger-ui.png
+│
+├── .gitignore
+├── README.md
+├── myapi.py
+└── requirements.txt
+```
+
+---
+
+# ⚙️ Installation
+
+### Clone the Repository
 
 ```bash
 git clone https://github.com/smilemangla0310/CRUD-API.git
 ```
 
-Move inside the project
+Move into the project directory
 
 ```bash
 cd CRUD-API
 ```
 
-Create virtual environment
+---
+
+### Create Virtual Environment
+
+Windows
 
 ```bash
 python -m venv venv
 ```
 
-Activate
-
-Windows
+Activate the virtual environment
 
 ```bash
 venv\Scripts\activate
 ```
 
-Install dependencies
+---
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the server
+---
+
+### Run the API
 
 ```bash
 uvicorn myapi:app --reload
 ```
 
+The server will start at
+
+```
+http://127.0.0.1:8000
+```
+
 ---
 
-## Open Swagger UI
+# 📖 API Documentation
+
+Swagger UI
 
 ```
 http://127.0.0.1:8000/docs
 ```
 
+ReDoc
+
+```
+http://127.0.0.1:8000/redoc
+```
+
 ---
 
-## API Endpoints
+# 📌 API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| GET | `/` | Root |
+| GET | `/` | Root Endpoint |
 | GET | `/health` | Health Check |
 | GET | `/tasks` | Get All Tasks |
 | GET | `/tasks/{task_id}` | Get Task by ID |
-| POST | `/tasks` | Create Task |
-| PUT | `/tasks/{task_id}` | Update Task |
-| DELETE | `/tasks/{task_id}` | Delete Task |
+| POST | `/tasks` | Create a New Task |
+| PUT | `/tasks/{task_id}` | Update an Existing Task |
+| DELETE | `/tasks/{task_id}` | Delete a Task |
 
 ---
 
-## Example cURL
+# 📄 Example cURL Request
+
+### Request
 
 ```bash
 curl -i http://127.0.0.1:8000/tasks
 ```
 
-Example Output
+### Response
 
 ```http
 HTTP/1.1 200 OK
+date: Fri, 17 Jul 2026 16:58:02 GMT
+server: uvicorn
+content-length: 148
 content-type: application/json
 
 [
   {
-    "id":1,
-    "title":"Watch Backend AI Session",
-    "done":false
+    "id": 2,
+    "title": "Practice and understand The FastAPI Framework",
+    "done": false
+  },
+  {
+    "id": 3,
+    "title": "Complete the Todo List API Assignment",
+    "done": true
   }
 ]
 ```
 
 ---
 
-## Swagger UI
+# 📸 Swagger UI
 
 ![Swagger UI](images/swagger-ui.png)
 
 ---
 
-## Project Author
+# 🎯 Learning Outcomes
 
-Smile Mangla
+Through this project, I learned:
+
+- Building REST APIs using FastAPI
+- Creating CRUD operations
+- Using Pydantic models for request validation
+- Handling HTTP exceptions and status codes
+- Testing APIs with Swagger UI
+- Managing Python virtual environments
+- Using Git and GitHub for version control
+- Writing project documentation using Markdown
+
+---
+
+# 👩‍💻 Author
+
+**Smile Mangla**
 
 Backend AI Engineering Intern
 
 FlyRank AI
+
+GitHub: https://github.com/smilemangla0310
+
+
+
