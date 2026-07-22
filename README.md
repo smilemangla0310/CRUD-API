@@ -1,82 +1,83 @@
-# 🚀 Todo API using FastAPI & SQLite
+# 🚀 CRUD Todo API using FastAPI
 
-A beginner-friendly RESTful Todo API built using **FastAPI** and **SQLite**. This project demonstrates CRUD (Create, Read, Update, Delete) operations and uses SQLite as the database for persistent storage.
+A simple CRUD (Create, Read, Update, Delete) REST API built using **FastAPI** .
+
+This project demonstrates the fundamentals of backend API development, request validation using Pydantic, HTTP exception handling, and interactive API documentation with Swagger UI.
 
 ---
 
 ## 📌 Features
 
-- ✅ Create a new task
-- ✅ View all tasks
-- ✅ View a task by ID
-- ✅ Update an existing task
-- ✅ Delete a task
-- ✅ Persistent data storage using SQLite
-- ✅ Interactive API documentation with Swagger UI
+- ✅ Create a Task
+- ✅ Get All Tasks
+- ✅ Get Task by ID
+- ✅ Update an Existing Task
+- ✅ Delete a Task
+- ✅ Request Validation using Pydantic
+- ✅ Interactive Swagger UI Documentation
+- ✅ HTTP Status Codes & Error Handling
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 - Python 3
 - FastAPI
-- SQLite
 - Pydantic
 - Uvicorn
+- Git & GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
-todo-api-fastapi/
+CRUD-API/
 │
-├── main.py              # FastAPI application
-├── sqlite.py            # Database initialization
-├── requirements.txt     # Project dependencies
-├── README.md
+├── images/
+│   └── swagger-ui.png
+│
 ├── .gitignore
-├── images/              # API screenshots
-└── tasks.db             # SQLite database (ignored by Git)
+├── README.md
+├── myapi.py
+└── requirements.txt
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/todo-api-fastapi.git
-```
-
-### 2. Navigate to the project
+### Clone the Repository
 
 ```bash
-cd todo-api-fastapi
+git clone https://github.com/smilemangla0310/CRUD-API.git
 ```
 
-### 3. Create a virtual environment
+Move into the project directory
+
+```bash
+cd CRUD-API
+```
+
+---
+
+### Create Virtual Environment
+
+Windows
 
 ```bash
 python -m venv venv
 ```
 
-### 4. Activate the virtual environment
-
-**Windows**
+Activate the virtual environment
 
 ```bash
 venv\Scripts\activate
 ```
 
-**Mac/Linux**
+---
 
-```bash
-source venv/bin/activate
-```
-
-### 5. Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -84,25 +85,21 @@ pip install -r requirements.txt
 
 ---
 
-## 🗄️ Initialize the Database
-
-Run the following command once to create the SQLite database and sample tasks.
+### Run the API
 
 ```bash
-python sqlite.py
+uvicorn myapi:app --reload
+```
+
+The server will start at
+
+```
+http://127.0.0.1:8000
 ```
 
 ---
 
-## ▶️ Run the API
-
-```bash
-uvicorn main:app --reload
-```
-
----
-
-## 📖 API Documentation
+# 📖 API Documentation
 
 Swagger UI
 
@@ -118,66 +115,83 @@ http://127.0.0.1:8000/redoc
 
 ---
 
-## 📌 API Endpoints
+# 📌 API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| GET | `/` | Home endpoint |
-| GET | `/health` | Health check |
-| GET | `/tasks` | Get all tasks |
-| GET | `/tasks/{task_id}` | Get a task by ID |
-| POST | `/tasks` | Create a new task |
-| PUT | `/tasks/{task_id}` | Update a task |
-| DELETE | `/tasks/{task_id}` | Delete a task |
+| GET | `/` | Root Endpoint |
+| GET | `/health` | Health Check |
+| GET | `/tasks` | Get All Tasks |
+| GET | `/tasks/{task_id}` | Get Task by ID |
+| POST | `/tasks` | Create a New Task |
+| PUT | `/tasks/{task_id}` | Update an Existing Task |
+| DELETE | `/tasks/{task_id}` | Delete a Task |
 
 ---
 
-## 📸 Screenshots
+# 📄 Example cURL Request
 
-### Swagger UI
+### Request
+
+```bash
+curl -i http://127.0.0.1:8000/tasks
+```
+
+### Response
+
+```http
+HTTP/1.1 200 OK
+date: Fri, 17 Jul 2026 16:58:02 GMT
+server: uvicorn
+content-length: 148
+content-type: application/json
+
+[
+  {
+    "id": 2,
+    "title": "Practice and understand The FastAPI Framework",
+    "done": false
+  },
+  {
+    "id": 3,
+    "title": "Complete the Todo List API Assignment",
+    "done": true
+  }
+]
+```
+
+---
+
+# 📸 Swagger UI
 
 ![Swagger UI](images/swagger-ui.png)
 
-### Get Tasks
-
-![Get Tasks](images/get-tasks.png)
-
-### Create Task
-
-![Create Task](images/create-task.png)
-
-### Update Task
-
-![Update Task](images/update-task.png)
-
-### Delete Task
-
-![Delete Task](images/delete-task.png)
-
 ---
 
-## 🎯 Learning Outcomes
+# 🎯 Learning Outcomes
 
 Through this project, I learned:
 
-- FastAPI fundamentals
-- REST API development
-- CRUD operations
-- SQLite database integration
-- SQL queries (SELECT, INSERT, UPDATE, DELETE)
-- HTTP status codes
-- Pydantic models
-- Git & GitHub project management
+- Building REST APIs using FastAPI
+- Creating CRUD operations
+- Using Pydantic models for request validation
+- Handling HTTP exceptions and status codes
+- Testing APIs with Swagger UI
+- Managing Python virtual environments
+- Using Git and GitHub for version control
+- Writing project documentation using Markdown
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
 **Smile Mangla**
 
-Aspiring AI & Backend Engineer
+Backend AI Engineering Intern
+
+FlyRank AI
+
+GitHub: https://github.com/smilemangla0310
 
 
----
 
-## ⭐ If you found this project helpful, consider giving it a star!
